@@ -1,0 +1,52 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table User {
+  id Int [pk, increment]
+  uuid String [unique, not null]
+  created_at DateTime [default: `now()`, not null]
+  updated_at DateTime [not null]
+  first_name String [not null]
+  last_name String [not null]
+  username String [unique, not null]
+  password String [not null]
+  email String [unique, not null]
+  contact String
+  type UserType [not null, default: 'CUSTOMER']
+  customer Customer
+  last_login DateTime
+}
+
+Table Customer {
+  id Int [pk, increment]
+  uuid String [unique, not null]
+  created_at DateTime [default: `now()`, not null]
+  updated_at DateTime [not null]
+  user User
+  user_id Int [unique]
+  operating_name String
+  contact String
+  image Image
+  image_id Int [unique]
+}
+
+Table Image {
+  id Int [pk, increment]
+  uuid String [unique, not null]
+  created_at DateTime [default: `now()`, not null]
+  updated_at DateTime [not null]
+  file_url String
+  caption String
+  customer Customer
+}
+
+Enum UserType {
+  CUSTOMER
+  ADMIN
+  STAFF
+}
+
+Ref: Customer.user_id - User.id
+
+Ref: Customer.image_id - Image.id
