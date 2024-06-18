@@ -1,4 +1,4 @@
-import {Body, Controller, Delete, Get, Param, Post, Put, Query, Req, UseGuards, Request } from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Post, Put, Query, Req, UseGuards, Request} from '@nestjs/common';
 import {UserLibService} from './user-lib.service';
 import {ApiBearerAuth, ApiBody, ApiOperation, ApiParam, ApiQuery, ApiResponse, ApiTags} from '@nestjs/swagger';
 import {UserRequestDto, UserResponseDto, UpdateUserDto} from './user-lib.dto';
@@ -33,8 +33,7 @@ export class UserLibController {
         return this.userLibService.findOne({uuid: uuid});
     }
 
-    @UseGuards(AuthGuardService)
-    @ApiBearerAuth()
+
     @Post()
     @ApiOperation({summary: 'Create a new user'})
     @ApiResponse({status: 201, description: 'The user has been successfully created.', type: UserResponseDto})

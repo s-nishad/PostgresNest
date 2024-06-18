@@ -20,6 +20,7 @@
             "@postgresnest/core-lib": ["libs/core-lib/src/index.ts"],
             "@postgresnest/db-lib": ["libs/db-lib/src/index.ts"],
             "@postgresnest/mail-lib": ["libs/mail-lib/src/index.ts"],
+            "@postgresnest/profile-lib": ["libs/profile-lib/src/index.ts"],
             "@postgresnest/user-lib": ["libs/user-lib/src/index.ts"]
         }
     },

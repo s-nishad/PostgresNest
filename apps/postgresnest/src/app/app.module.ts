@@ -7,9 +7,10 @@ import {AuthLibModule} from "@postgresnest/auth-lib";
 import {DbLibModule} from "@postgresnest/db-lib";
 import {CoreLibModule} from "@postgresnest/core-lib";
 import {MailLibModule} from "@postgresnest/mail-lib";
+import {ProfileLibModule} from "@postgresnest/profile-lib";
 
 @Module({
-    imports: [UserLibModule, AuthLibModule, CoreLibModule, DbLibModule, MailLibModule],
+    imports: [UserLibModule, AuthLibModule, CoreLibModule, DbLibModule, MailLibModule, ProfileLibModule],
     controllers: [AppController],
     providers: [AppService],
 })
